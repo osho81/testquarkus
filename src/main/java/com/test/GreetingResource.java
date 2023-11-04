@@ -3,9 +3,6 @@ package com.test;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
-
-// Change branch name, master to main, locally
-
 @Path("/api/v1")
 public class GreetingResource {
 
