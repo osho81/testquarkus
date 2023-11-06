@@ -4,12 +4,14 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "persons")
 public class Person extends PanacheEntity {
 
 //    @Id
-//    private Long id;
+    private Long id;
 
     private String firstName;
     private String lastName;
@@ -24,11 +26,11 @@ public class Person extends PanacheEntity {
         this.age = age;
     }
 
-    public Person(Long id, String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
+//    public Person(Long id, String firstName, String lastName, int age) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.age = age;
+//    }
 
 
     public void setId(Long id) {
