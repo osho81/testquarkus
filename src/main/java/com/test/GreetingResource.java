@@ -41,5 +41,29 @@ public class GreetingResource {
         return person;
     }
 
+    @PUT
+    @Path("/updateperson")
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Person updatePerson(Person person) {
+        // Find personToUpdate by id form req body
+        // (or add long id as param besides req body)
+        Person personToUpdate = Person.findById(person.getId());
+        if(personToUpdate == null) {
+            throw new NotFoundException();
+        }
+
+        // If personToUpdate exists by id
+        // map new properties req body person to the found personToUpdate
+        // (ignore by now to handle null or excepted property values)
+        personToUpdate.setFirstName(person.getFirstName());
+        personToUpdate.setLastName(person.getLastName());
+        personToUpdate.setAge(person.getAge());
+
+
+        return null;
+    }
+
 
 }
