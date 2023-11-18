@@ -17,8 +17,8 @@ public class GreetingResource {
     @POST
     @Path("/addperson")
     @Transactional
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Person addPerson(Person person) {
         System.out.println("In add Person method");
 //        Person tempPerson = new Person();
@@ -27,14 +27,14 @@ public class GreetingResource {
 //        tempPerson.setAge(person.getAge());
         Person newPerson = new Person(person.getFirstName(), person.getLastName(), person.getAge());
         Person.persist(newPerson);
-        return person;
+        return newPerson;
     }
 
     @POST
     @Path("/addperson2")
     @Transactional
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Person addPerson2(Person person) {
         System.out.println("In add Person method 2");
         Person.persist(person);
@@ -49,10 +49,13 @@ public class GreetingResource {
     public Person updatePerson(Person person) {
         // Find personToUpdate by id form req body
         // (or add long id as param besides req body)
+        System.out.println(person.getId());
         Person personToUpdate = Person.findById(person.getId());
-        if(personToUpdate == null) {
-            throw new NotFoundException();
-        }
+//        if(personToUpdate == null) {
+//            throw new NotFoundException();
+//        }
+
+        System.out.println(personToUpdate.getLastName());
 
         // If personToUpdate exists by id
         // map new properties req body person to the found personToUpdate
@@ -62,7 +65,7 @@ public class GreetingResource {
         personToUpdate.setAge(person.getAge());
 
 
-        return null;
+        return personToUpdate;
     }
 
 
