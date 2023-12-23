@@ -14,6 +14,8 @@ public class GreetingResource {
         return "Hello from RESTEasy Reactive";
     }
 
+    // ADD get person by id
+
     @POST
     @Path("/addperson")
     @Transactional
