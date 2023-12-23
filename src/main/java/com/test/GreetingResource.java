@@ -14,7 +14,7 @@ public class GreetingResource {
         return "Hello from RESTEasy Reactive";
     }
 
-    // Add get all persons list
+    // Add get list of all persons
 
     // Add get person by id
 
