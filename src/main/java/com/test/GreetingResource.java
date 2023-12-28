@@ -21,12 +21,12 @@ public class GreetingResource {
     @GET
     @Path("/allpersons")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Person> getPersons() {
-        return Person.listAll(); // return list directly, instead of just findAll()
+    public ArrayList<Person> getPersons() {
+//        return Person.listAll(); // return list directly, instead of just findAll()
 
         // If the method returns ArrayList, can use this code:
-//        List<Person> personList = Person.listAll();
-//        return new ArrayList<>(personList);
+        List<Person> personList = Person.listAll();
+        return new ArrayList<>(personList);
     }
 
     // Add get person by id
