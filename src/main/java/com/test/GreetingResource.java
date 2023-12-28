@@ -4,6 +4,8 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
+import java.util.ArrayList;
+
 @Path("/api/v1")
 public class GreetingResource {
 
@@ -15,6 +17,11 @@ public class GreetingResource {
     }
 
     // Add get list of all persons
+    @GET
+    @Path("/getpersons")
+    public ArrayList<Person> getPersons() {
+        return (ArrayList<Person>) Person.findAll();
+    }
 
     // Add get person by id
 
