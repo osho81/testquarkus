@@ -18,7 +18,8 @@ public class GreetingResource {
 
     // Add get list of all persons
     @GET
-    @Path("/getpersons")
+    @Path("/allpersons")
+    @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Person> getPersons() {
         return (ArrayList<Person>) Person.findAll();
     }
