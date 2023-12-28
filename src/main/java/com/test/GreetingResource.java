@@ -5,6 +5,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Path("/api/v1")
 public class GreetingResource {
@@ -20,8 +21,12 @@ public class GreetingResource {
     @GET
     @Path("/allpersons")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Person> getPersons() {
-        return (ArrayList<Person>) Person.findAll();
+    public List<Person> getPersons() {
+        return Person.listAll(); // return list directly, instead of just findAll()
+
+        // If the method returns ArrayList, can use this code:
+//        List<Person> personList = Person.listAll();
+//        return new ArrayList<>(personList);
     }
 
     // Add get person by id
