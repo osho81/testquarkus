@@ -7,6 +7,9 @@ import jakarta.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: Add request response to the api methods
+// TODO: Add tests to the api methods in corresponding test-file
+
 @Path("/api/v1")
 public class GreetingResource {
 
