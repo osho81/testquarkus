@@ -30,6 +30,11 @@ public class GreetingResource {
     }
 
     // Add get person by id
+    @GET
+    @Path("/personbyid")
+    public Person getPersonById(long id) {
+        return Person.findById(id);
+    }
 
     @POST
     @Path("/addperson")
