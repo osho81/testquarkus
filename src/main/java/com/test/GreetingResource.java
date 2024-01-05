@@ -32,12 +32,14 @@ public class GreetingResource {
 //        return new ArrayList<>(personList);
     }
 
-    // Add get person by id
+    // Add getPersonById; id as pathvar (pathparam)
     @GET
-    @Path("/personbyid")
-    public Person getPersonById(long id) {
+    @Path("/personbyid/{id}")
+    public Person getPersonById(@PathParam("id") long id) {
         return Person.findById(id);
     }
+
+    // Add getPersonById; id as req-body field
 
     @POST
     @Path("/addperson")
