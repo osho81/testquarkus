@@ -42,6 +42,7 @@ public class GreetingResource {
     }
 
     // Add getPersonById; id as req-body field
+    // Response shown in Postman or terminal
     @GET
     @Path("/personresponsebyid/{id}")
     @Produces(MediaType.APPLICATION_JSON)
