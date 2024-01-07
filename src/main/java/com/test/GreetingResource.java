@@ -3,6 +3,7 @@ package com.test;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +36,22 @@ public class GreetingResource {
     // Add getPersonById; id as pathvar (pathparam)
     @GET
     @Path("/personbyid/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Person getPersonById(@PathParam("id") long id) {
         return Person.findById(id);
     }
 
     // Add getPersonById; id as req-body field
+    @GET
+    @Path("/personresponsebyid/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getPersonResponseById(@PathParam("id") long id) {
+        Person person = Person.findById(id);
+        if (person == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(person).build();
+    }
 
     @POST
     @Path("/addperson")
