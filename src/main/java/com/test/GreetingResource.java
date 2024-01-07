@@ -5,7 +5,6 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // TODO: Add request response to the api methods
