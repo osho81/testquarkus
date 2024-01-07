@@ -43,6 +43,7 @@ public class GreetingResource {
 
     // Add getPersonById; id as req-body field
     // Response shown in Postman or terminal
+    // (Run tool in intelliJ is not available in quarkus dev mode)
     @GET
     @Path("/personresponsebyid/{id}")
     @Produces(MediaType.APPLICATION_JSON)
