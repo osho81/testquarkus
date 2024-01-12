@@ -1,6 +1,7 @@
 package com.test;
 
 import io.quarkus.test.InjectMock;
+import io.quarkus.test.Mock;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,9 @@ public class PersonResourceTest {
     @InjectMock
     private PersonResource personResource;
 
+    @Mock
+    private Person person;
+
     @Test
     public void testHelloEndpoint() {
         given()
@@ -21,6 +25,11 @@ public class PersonResourceTest {
           .then()
              .statusCode(200)
              .body(is("Hello from RESTEasy Reactive"));
+    }
+
+    @Test
+    public void testGetAllPersons() {
+
     }
 
 
