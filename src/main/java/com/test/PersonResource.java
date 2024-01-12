@@ -11,7 +11,7 @@ import java.util.List;
 // TODO: Add tests to the api methods in corresponding test-file
 
 @Path("/api/v1")
-public class GreetingResource {
+public class PersonResource {
 
     @GET
     @Path("/hello")
