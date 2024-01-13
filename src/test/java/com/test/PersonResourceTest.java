@@ -3,6 +3,7 @@ package com.test;
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.Mock;
 import io.quarkus.test.junit.QuarkusTest;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -28,8 +29,18 @@ public class PersonResourceTest {
     }
 
     @Test
-    public void testGetAllPersons() {
+    public void testAddPerson() {
+        Person mockPerson = new Person();
+        mockPerson.setId(1L);
+        mockPerson.setFirstName("John");
+        mockPerson.setFirstName("Doe");
 
+//        Deprecated?
+//        Mockito.when(personService.getPersonById(1L)).thenReturn(Optional.of(mockPerson));
+
+        Person retrievedPerson = personResource.getPersonById(1L);
+
+        Assertions.assertEquals(mockPerson, retrievedPerson);
     }
 
 
