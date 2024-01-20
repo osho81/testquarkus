@@ -2,6 +2,7 @@ package com.test;
 
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.Mock;
+import io.quarkus.test.junit.QuarkusMock;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
