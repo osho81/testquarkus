@@ -109,5 +109,14 @@ public class PersonResource {
         return personToUpdate;
     }
 
+    @DELETE
+    @Path("/deleteperson")
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void deletePerson(Person person){
+        Person personToDelete = Person.findById(person.getId());
+        Person.deleteById(personToDelete.getId());
+    }
+
 
 }
