@@ -70,6 +70,7 @@ public class PersonResource {
         return newPerson;
     }
 
+    // Use primarily this shortened post method
     @POST
     @Path("/addperson2")
     @Transactional
