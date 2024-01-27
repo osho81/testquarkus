@@ -26,6 +26,7 @@ public class Person extends PanacheEntity {
         this.age = age;
     }
 
+    // No need for id para
 //    public Person(Long id, String firstName, String lastName, int age) {
 //        this.firstName = firstName;
 //        this.lastName = lastName;

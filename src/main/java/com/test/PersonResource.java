@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 // TODO: Add request response to the api methods
-// TODO: Add tests to the api methods in corresponding test-file
+// TODO: Refactore and do service methods instead
 
 @Path("/api/v1")
 public class PersonResource {
