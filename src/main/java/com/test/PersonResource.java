@@ -25,7 +25,7 @@ public class PersonResource {
     @GET
     @Path("/allpersons")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Person> getPersons() {
+    public List<Person> getPersons() { // Either return List or ArrayList
         return Person.listAll(); // return list directly, instead of just findAll()
 
         // If the method returns ArrayList, can use this code:
