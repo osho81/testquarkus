@@ -5,6 +5,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // TODO: Add request response to the api methods
@@ -22,15 +23,30 @@ public class PersonResource {
     }
 
     // Add get list of all persons
+    // Version when returning List
     @GET
     @Path("/allpersons")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Person> getPersons() { // Either return List or ArrayList; see body comment
+    public List<Person> getPersons() {
         return Person.listAll(); // return list directly, instead of just findAll()
 
         // If the method returns ArrayList, can use this code:
 //        List<Person> personList = Person.listAll();
 //        return new ArrayList<>(personList);
+    }
+
+
+    // Add get list of all persons
+    // Version when returning ArrayList
+    @GET
+    @Path("/allpersons")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<Person> getPersonsArrayList() {
+//        return Person.listAll(); // return list directly, instead of just findAll()
+
+        // If the method returns ArrayList, can use this code:
+        List<Person> personList = Person.listAll();
+        return new ArrayList<>(personList);
     }
 
     // Add getPersonById; id as pathvar (pathparam)
