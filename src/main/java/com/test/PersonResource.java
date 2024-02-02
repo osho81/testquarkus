@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // TODO: Add request response to the api methods
-// TODO: Refactore and do service methods instead
+// TODO: Refactore and add service methods in service class
 // TODO: Add tests to the api methods in corresponding test-file
 
 @Path("/api/v1")
