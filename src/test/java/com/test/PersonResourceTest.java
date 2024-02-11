@@ -6,7 +6,7 @@ import io.quarkus.test.junit.QuarkusMock;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-//import org.mockito.*; // If use general org.mockito library
+import org.mockito.Mockito; // Same import for general & quarkus mockito lib
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
