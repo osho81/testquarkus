@@ -11,6 +11,11 @@ import org.mockito.Mockito; // Same import for general & quarkus mockito lib
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
+
+// Split this testing file into
+// 1) Integrations tests
+// 2) Normal resource test
+
 @QuarkusTest
 public class PersonResourceTest {
 
