@@ -39,8 +39,8 @@ public class PersonResourceTest {
     public void testAddPerson() {
         Person mockPerson = new Person();
 //        mockPerson.setId(1L);
-        mockPerson.setFirstName("John");
-        mockPerson.setFirstName("Doe");
+//        mockPerson.setFirstName("John");
+//        mockPerson.setFirstName("Doe");
 
 //        Mockito.when(personService.getPersonById(1L)).thenReturn(Optional.of(mockPerson));
 
